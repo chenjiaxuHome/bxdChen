@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+    <title>必须贷</title>
+  </head>
+  <body class="body">
+    <div id="app"></div>
+  </body>
+</html>
+<script type="text/javascript">
+	function fontSize() {
+    var view_width = document.getElementsByTagName('html')[0].getBoundingClientRect().width;
+    //       console.log("屏幕尺寸:"+view_width);
+    var _html = document.getElementsByTagName('html')[0];
+    var htmlfontsize = 0;
+    view_width > 768 ? htmlfontsize = 50 * 768 / 375 :
+      view_width > 376 ? htmlfontsize = view_width * 48 / 375 : htmlfontsize = view_width * 50 / 375;
+    console.log(htmlfontsize);
+    _html.style.fontSize = (htmlfontsize < 70 ? htmlfontsize : 70) + "px";
+  }
+  fontSize();
+  window.onresize = function() {
+    fontSize();
+  }
+</script>
